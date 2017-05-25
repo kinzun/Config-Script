@@ -1,6 +1,7 @@
 #脚本说明
 ##编译安装
->[haiyuangithub](https://github.com/Liuhaiyuan/Varnish_Install)
+
+
 这里展示脚本文件的一部分
 
 ```
@@ -59,3 +60,5 @@ backend default {
 [root@proxy02 varnish]#ln -s /usr/local/varnish/bin/* /usr/bin/
 [root@proxy02 varnish]#varnishadm -S /etc/varnish/secret -T 127.0.0.1:6082 ban.url index.html
 [root@proxy02 varnish]#varnishadm -S /etc/varnish/secret -T 127.0.0.1:6082 ban.url ".*"
+
+>[haiyuangithub](https://github.com/Liuhaiyuan/Varnish_Install)
