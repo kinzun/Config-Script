@@ -69,7 +69,7 @@ timesqlcg
 cgs)
 #config zabbix server 
 configzbs(){
-
+sed -i "/# DBName=/aDBName=zabbix\n" /etc/zabbix/zabbix_server.conf
 sed -i "/^# DBHost=localhost/a\DBHost=$ip" /etc/zabbix/zabbix_server.conf
 sed -i "s/DBUser\=root/DBUser\=zabuser/g" /etc/zabbix/zabbix_server.conf
 sed -i "/# DBPassword=/aDBPassword=zabpass\n" /etc/zabbix/zabbix_server.conf
@@ -77,7 +77,7 @@ sed -i "/# DBPassword=/aDBPassword=zabpass\n" /etc/zabbix/zabbix_server.conf
 }
 configzbs
 ;;
-
+# sed -E "55s/display.*/display' => false],/" /usr/share/zabbix/include/locales.inc.php  
 *)
     echo '''
           bt|basecreate 

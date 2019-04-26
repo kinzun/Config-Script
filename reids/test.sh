@@ -29,9 +29,10 @@ redis_conf
 sl)
 /usr/bin/sed -i "s@^bind 127.0.0.1@bind 127.0.0.1 $IP@" $redis_path
 /usr/bin/sed -i "s@^daemonize no@daemonize yes@" $redis_path
-/usr/bin/sed -i '/^# slaveof/a\slaveof 192.168.0.15 6379' $redis_path
-/usr/bin/sed -i '/^# requirepass foobared/i\#' $redis_path
+/usr/bin/sed -i '/^# slaveof/a\slaveof 192.168.0.15 6379' $redis_path #slave of ###
+# /usr/bin/sed -i '/^# requirepass foobared/i\#' $redis_path
 /usr/bin/sed -i '/^# masterauth/a\masterauth foobared ' $redis_path
+/usr/bin/sed -i "s/^pidfile.*/#&/" $redis_path
 
 ;;
 st)

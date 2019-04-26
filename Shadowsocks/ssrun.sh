@@ -11,11 +11,13 @@ configss(){
 if [ ! -e /etc/shadowsocks.json ] ;then
         cat > /etc/shadowsocks.json << EOF
 {
-    "server":"45.76.174.137",
-    "server_port":9128,
+    "server":"45.76.13.61",
     "local_address": "127.0.0.1",
     "local_port":1080,
-    "password":"tianqibucuo",
+    "port_password":{
+        "9128":"tianqibucuo",
+	"9129":"nihaoa",
+    },
     "timeout":300,
     "method":"aes-256-cfb",
     "fast_open": false
